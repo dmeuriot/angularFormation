@@ -1,0 +1,18 @@
+<form class="form" #form="ngForm" (ngSubmit)="process()" novalidate>
+  <div class="form-group">
+    <input type="text" #nom [(ngModel)]="newItem.name" name="name" class="form-control" placeholder="nom et prénom" minlength="5">
+  </div>
+
+  <div class="form-group">
+    <input type="text" #ref [(ngModel)]="newItem.ref" name="ref" class="form-control" placeholder="reference ex :1234" minlength="4">
+  </div>
+
+  <div class="form-group">
+    <select #nom [(ngModel)]="newItem.state" class="form-control" name="state">
+      <option [ngValue]="state.ALIVRER">A livrer</option>
+      <option [ngValue]="state.ENCOURS">En cours</option>
+      <option [ngValue]="state.LIVRE">Livré</option>
+    </select>
+    <button [disabled]="form.invalid" type="submit" class="btn">Submit</button>
+  </div>
+</form>

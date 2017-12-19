@@ -1,19 +1,26 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
+import { SharedModule } from '../shared/shared.module';
+
 import { ItemComponent } from './components/item/item.component';
 import { ListItemsComponent } from './components/list-items/list-items.component';
+import { AddComponent } from './containers/add/add.component';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    SharedModule
   ],
   exports: [
     ItemComponent,
-    ListItemsComponent
+    ListItemsComponent,
+    AddComponent
   ],
   declarations: [
     ItemComponent,
-    ListItemsComponent
+    ListItemsComponent,
+    AddComponent
   ]
 })
 export class ItemsModule { }
