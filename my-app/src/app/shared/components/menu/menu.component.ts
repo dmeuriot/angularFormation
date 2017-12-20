@@ -8,11 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class MenuComponent implements OnInit {
   public isCollapsed = true;
   title;
-
   constructor() { }
 
   ngOnInit() {
-    this.title = 'app livreur';
+    this.title = 'App livreur';
   }
 
 }

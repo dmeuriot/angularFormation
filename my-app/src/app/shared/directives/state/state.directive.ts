@@ -1,10 +1,11 @@
-import { Directive, Input, OnChanges,ElementRef, Renderer2} from '@angular/core';
-import { State } from '../../enmus/state.enum';
+import { Directive, Input, OnChanges, ElementRef, Renderer2 } from '@angular/core';
+import { State } from '../../enums/state.enum';
 
 @Directive({
   selector: '[appState]'
 })
-export class StateDirective implements OnChanges{
+export class StateDirective implements OnChanges {
+
   @Input('appState') appState;
   constructor(private _ElementRef: ElementRef, private _Renderer2: Renderer2) { }
 
@@ -14,14 +15,14 @@ export class StateDirective implements OnChanges{
     const cssClass = `state-${this.appState}`;
     let text: string;
     switch (this.appState) {
-      case State.ALIVRER :
+      case State.ALIVRER:
       text = 'A livrer';
       break;
-      case State.ENCOURS :
+      case State.ENCOURS:
       text = 'En cours';
       break;
-      case State.LIVRE :
-      text = 'Livré';
+      case State.LIVREE:
+      text = 'Commande livrée';
       break;
       default:
       console.log(this.appState);
@@ -29,4 +30,5 @@ export class StateDirective implements OnChanges{
     this._Renderer2.addClass(ElementNode, cssClass);
     ElementNode.textContent = text;
   }
+
 }

@@ -1,7 +1,7 @@
-import { State } from '../enmus/state.enum';
+import { State } from '../enums/state.enum';
 
 export interface Item {
   name: string;
-  ref: string;
+  reference: string;
   state: State;
 }
